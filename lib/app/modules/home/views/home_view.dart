@@ -25,13 +25,11 @@ class HomeView extends GetView<HomeController> {
       children: [
         Column(
           children: [
-            Card(
-              child: GestureDetector(
-                 onTap: () {
-              Get.toNamed('/folder');
-                 },
-                child: Image.asset('assets/folder.jpeg', fit: BoxFit.fill,)),
-            ),
+            GestureDetector(
+               onTap: () {
+            Get.toNamed('/folder');
+               },
+              child: Image.asset('assets/folder.jpeg', height: 100,width: 150,)),
             CustomSizedBox(),
             const Text('FOLDER'),
           ],
@@ -124,20 +122,7 @@ class HomeView extends GetView<HomeController> {
 
   ],
 ),
-
-       
-       
-       
-
-        
-    
-
-
-
-      
-     
-      
-    );
+);
   }
 }
 
