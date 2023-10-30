@@ -10,32 +10,32 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
-      body: Padding(padding: EdgeInsets.only(left: 90,top: 40),
+      body: Padding(padding: const EdgeInsets.only(left: 90,top: 40),
         child: Column(
          
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 50,
-           //   backgroundImage: AssetImage('path_to_your_image'), // Replace with your image
+           
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'User Name',
               style: TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'useremail@example.com',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Implement your logout functionality
+                
               },
-              child: Text('Logout'),
+              child: const Text('Logout',),
             ),
           ],
         ),

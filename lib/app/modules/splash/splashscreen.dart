@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
 
      Future.delayed(Duration(seconds: 4), () {
       // Navigate to the HomeView when the delay is complete.
-      Get.offNamed('/home');
+      Get.offNamed('/bottomnavigationbar');
     });
     return  Scaffold(
       body: Center(child:Image.asset('assets/images.png',
