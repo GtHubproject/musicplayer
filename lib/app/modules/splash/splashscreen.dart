@@ -7,7 +7,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-     Future.delayed(Duration(seconds: 4), () {
+     Future.delayed(Duration(seconds: 1), () {
       // Navigate to the HomeView when the delay is complete.
       Get.offNamed('/bottomnavigationbar');
     });

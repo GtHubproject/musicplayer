@@ -14,6 +14,9 @@ class LibraryView extends GetView<LibraryController> {
         appBar: AppBar(
           title: Text('Library'),
           bottom: TabBar(
+            indicatorColor: const Color.fromARGB(255, 253, 242, 139),  
+            labelColor: const Color.fromARGB(255, 253, 242, 139), // Set the label (text) color to yellow
+            unselectedLabelColor: Colors.white,
             tabs: [
               Tab(text: 'Tracks'),
               Tab(text: 'Artists'),

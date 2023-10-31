@@ -18,7 +18,7 @@ class AlbumView extends GetView {
           shape:RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12)
           ),
-          tileColor: bgColor,
+          
           title: Text('Music Name'),
           subtitle: Text('Artist name'),
          // leading: Icon(Icons.music_note,color: whiteColor,size:32),

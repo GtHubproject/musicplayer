@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/bottomnavigationbar/bindings/bottomnavigationbar_binding.dart';
 import '../modules/bottomnavigationbar/views/bottomnavigationbar_view.dart';
+import '../modules/download/bindings/download_binding.dart';
+import '../modules/download/views/download_view.dart';
 import '../modules/favourites/bindings/favourites_binding.dart';
 import '../modules/favourites/views/favourites_view.dart';
 import '../modules/folder/bindings/folder_binding.dart';
@@ -25,7 +27,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MUSICPLAYING;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -50,7 +52,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FAVOURITES,
-      page: () => const FavouritesView(),
+      page: () => FavouritesView(),
       binding: FavouritesBinding(),
     ),
     GetPage(
@@ -75,8 +77,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MUSICPLAYING,
-      page: () => const MusicplayingView(),
+      page: () => MusicplayingView(),
       binding: MusicplayingBinding(),
+    ),
+    GetPage(
+      name: _Paths.DOWNLOAD,
+      page: () =>  DownloadView(),
+      binding: DownloadBinding(),
     ),
   ];
 }

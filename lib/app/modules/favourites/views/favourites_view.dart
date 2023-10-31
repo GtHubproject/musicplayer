@@ -4,8 +4,22 @@ import 'package:get/get.dart';
 
 import '../controllers/favourites_controller.dart';
 
+class Song {
+  final String title;
+  final String imageUrl; // Image URL for the song
+
+  Song({required this.title, required this.imageUrl});
+}
+
 class FavouritesView extends GetView<FavouritesController> {
-  const FavouritesView({Key? key}) : super(key: key);
+
+  final List<Song> favoriteSongs = [
+    Song(title: 'Song 1', imageUrl: 'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBhcHB8ZW58MHx8MHx8fDA%3D'),
+    Song(title: 'Song 2', imageUrl: ''), // Song without image
+    // Add more songs as needed
+  ];
+
+   FavouritesView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,45 +32,25 @@ class FavouritesView extends GetView<FavouritesController> {
           },
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'No music found',
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.pink,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 8),
-                      Text(
-                        'Add Songs',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: favoriteSongs.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: favoriteSongs[index].imageUrl != ''
+                ? Image.network(
+                    favoriteSongs[index].imageUrl,
+                    width: 50, // Adjust size as needed
+                    height: 50,
+                  )
+                : Icon(Icons.music_note), // Default icon if no image is available
+            title: Text(favoriteSongs[index].title),
+            trailing: Icon(Icons.favorite), // Heart icon as trailing widget
+            onTap: () {
+              // Add functionality for when a song tile is tapped
+              print('Song tapped: ${favoriteSongs[index].title}');
+            },
+          );
+        },
       ),
     );
   }

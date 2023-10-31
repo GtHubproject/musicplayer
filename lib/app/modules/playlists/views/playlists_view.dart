@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-
+import 'package:musicplayer/app/modules/playlists/widgets/renameDialog.dart';
+import 'package:musicplayer/app/modules/playlists/widgets/showDeleteDialog.dart';
 import '../controllers/playlists_controller.dart';
-
 class PlaylistsView extends GetView<PlaylistsController> {
-
   //--data
-   final List<Map<String, String>> songs = [
+  final List<Map<String, String>> songs = [
     {
       'name': 'Song 1',
       'source': 'Source 1',
-      
     },
     {
       'name': 'Song 2',
@@ -21,13 +19,12 @@ class PlaylistsView extends GetView<PlaylistsController> {
       'name': 'Song 3',
       'source': 'Source 3',
     },
-  
   ];
   PlaylistsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBar(
+      appBar: AppBar(
         title: Text('Playlist 1'),
         actions: [
           PopupMenuButton(
@@ -52,77 +49,16 @@ class PlaylistsView extends GetView<PlaylistsController> {
             },
             onSelected: (value) {
               if (value == 'rename') {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    String playlistName = 'Playlist 1'; // Default playlist name
-
-                    return AlertDialog(
-                      title: Text('Rename Playlist'),
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          TextField(
-                            decoration: InputDecoration(
-                              labelText: 'Playlist Name',
-                            ),
-                            onChanged: (value) {
-                              playlistName = value;
-                            },
-                          ),
-                        ],
-                      ),
-                      actions: <Widget>[
-                        TextButton(
-                          child: Text('Cancel'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                        TextButton(
-                          child: Text('OK'),
-                          onPressed: () {
-                            // Handle playlist renaming logic here with 'playlistName'
-                            print('Renaming playlist to: $playlistName');
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
-                    );
-                  },
-                );
+                showRenameDialog( context);
+                
               } else if (value == 'delete') {
-                // Handle 'Delete' action
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Delete'),
-                      content: Text('Are you sure to delete?'),
-                      actions: <Widget>[
-                        TextButton(
-                          child: Text('Cancel'),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                        TextButton(
-                          child: Text('OK'),
-                          onPressed: () {
-                            // Handle deletion logic here
-                            print('Deleting...');
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      ],
-                    );
-                  },
-                );
-              }
+                showDeleteDialog(context);
+               }
             },
           ),
         ],
       ),
+      
       body: ListView.builder(
         itemCount: songs.length,
         itemBuilder: (context, index) {

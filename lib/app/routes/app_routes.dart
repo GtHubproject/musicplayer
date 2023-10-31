@@ -13,6 +13,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const BOTTOMNAVIGATIONBAR = _Paths.BOTTOMNAVIGATIONBAR;
   static const MUSICPLAYING = _Paths.MUSICPLAYING;
+  static const DOWNLOAD = _Paths.DOWNLOAD;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const BOTTOMNAVIGATIONBAR = '/bottomnavigationbar';
   static const MUSICPLAYING = '/musicplaying';
+  static const DOWNLOAD = '/download';
 }
