@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 void showRenameDialog(BuildContext context) {
 
-                showDialog(
+                showDialog(barrierColor: 
+           Colors.white12,
                   context: context,
                   builder: (BuildContext context) {
                     String playlistName = 'Playlist 1'; // Default playlist name

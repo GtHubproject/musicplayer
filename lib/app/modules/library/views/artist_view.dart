@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
 
-class ArtistView extends GetView {
-  const ArtistView({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ArtistView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'ArtistView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
-  }
+import 'package:flutter/material.dart';
+
+Widget ArtistsView() {
+  return ListView.builder(
+    itemCount: 5,
+    itemBuilder: (context, index) {
+      return ListTile(
+        title: Text('Artist $index'),
+        trailing: Icon(Icons.arrow_forward),
+        leading: Icon(Icons.person),
+      );
+    },
+  );
 }

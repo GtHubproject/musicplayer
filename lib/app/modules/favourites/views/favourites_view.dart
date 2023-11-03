@@ -14,7 +14,8 @@ class Song {
 class FavouritesView extends GetView<FavouritesController> {
 
   final List<Song> favoriteSongs = [
-    Song(title: 'Song 1', imageUrl: 'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBhcHB8ZW58MHx8MHx8fDA%3D'),
+    Song(title: 'Song 1', imageUrl: ''),
+    // 'https://images.unsplash.com/photo-1471478331149-c72f17e33c73?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBhcHB8ZW58MHx8MHx8fDA%3D'),
     Song(title: 'Song 2', imageUrl: ''), // Song without image
     // Add more songs as needed
   ];
@@ -36,6 +37,8 @@ class FavouritesView extends GetView<FavouritesController> {
         itemCount: favoriteSongs.length,
         itemBuilder: (context, index) {
           return ListTile(
+          
+            tileColor: Colors.amberAccent,
             leading: favoriteSongs[index].imageUrl != ''
                 ? Image.network(
                     favoriteSongs[index].imageUrl,
@@ -44,7 +47,7 @@ class FavouritesView extends GetView<FavouritesController> {
                   )
                 : Icon(Icons.music_note), // Default icon if no image is available
             title: Text(favoriteSongs[index].title),
-            trailing: Icon(Icons.favorite), // Heart icon as trailing widget
+            trailing: IconButton( icon:Icon(Icons.favorite), onPressed: () {  },), // Heart icon as trailing widget
             onTap: () {
               // Add functionality for when a song tile is tapped
               print('Song tapped: ${favoriteSongs[index].title}');

@@ -28,7 +28,7 @@ class HomeView extends GetView<HomeController> {
         //backgroundColor: const Color.fromARGB(255, 19, 18, 18), // App bar background color
       ),
 
-      drawer:DrawerView(),
+    //  drawer:DrawerView(),
       //bottomNavigationBar: const CustomNavbar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
