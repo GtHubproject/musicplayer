@@ -14,6 +14,7 @@ abstract class Routes {
   static const BOTTOMNAVIGATIONBAR = _Paths.BOTTOMNAVIGATIONBAR;
   static const MUSICPLAYING = _Paths.MUSICPLAYING;
   static const DOWNLOAD = _Paths.DOWNLOAD;
+  static const PERMISSION = _Paths.PERMISSION;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const BOTTOMNAVIGATIONBAR = '/bottomnavigationbar';
   static const MUSICPLAYING = '/musicplaying';
   static const DOWNLOAD = '/download';
+  static const PERMISSION = '/permission';
 }

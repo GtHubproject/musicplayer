@@ -155,7 +155,7 @@ class HomeView extends GetView<HomeController> {
                       height: 50,
                     ),
                   ),
-                  title: const Text('song1'), // Replace with your song title
+                  title: const Text('song'), // Replace with your song title
                   subtitle:
                       const Text('party song'), // Replace with your artist name
                   // Add more song details or onTap functionality as needed

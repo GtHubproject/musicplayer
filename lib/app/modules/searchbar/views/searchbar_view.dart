@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../controllers/searchbar_controller.dart';
 
 class SearchbarView extends GetView<SearchbarController> {
@@ -11,12 +9,16 @@ class SearchbarView extends GetView<SearchbarController> {
     return Scaffold(
       appBar: AppBar(
         title: TextField(
+          
           decoration: InputDecoration(
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            prefixIcon: Icon(Icons.search),
             hintText: 'Search...',
-            hintStyle: TextStyle(color: Colors.black),
+            hintStyle: TextStyle(color: const Color.fromARGB(255, 235, 228, 228)),
             border: InputBorder.none,
           ),
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: const Color.fromARGB(255, 238, 231, 231)),
         ),
       ),
       body: Column(

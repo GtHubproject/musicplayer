@@ -1,16 +1,13 @@
-
-
 import 'package:get/get.dart';
 
-
-class LibraryController extends GetxController {
-  //final audioQuery = OnAudioQuery();
+class PermissionController extends GetxController {
+  //TODO: Implement PermissionController
 
   final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
-}
+  }
 
   @override
   void onReady() {

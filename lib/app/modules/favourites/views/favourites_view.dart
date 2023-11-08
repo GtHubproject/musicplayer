@@ -38,7 +38,7 @@ class FavouritesView extends GetView<FavouritesController> {
         itemBuilder: (context, index) {
           return ListTile(
           
-            tileColor: Colors.amberAccent,
+            tileColor: Color.fromARGB(255, 199, 187, 148),
             leading: favoriteSongs[index].imageUrl != ''
                 ? Image.network(
                     favoriteSongs[index].imageUrl,
@@ -46,7 +46,7 @@ class FavouritesView extends GetView<FavouritesController> {
                     height: 50,
                   )
                 : Icon(Icons.music_note), // Default icon if no image is available
-            title: Text(favoriteSongs[index].title),
+            title: Text(favoriteSongs[index].title,style: TextStyle(color: Colors.black),),
             trailing: IconButton( icon:Icon(Icons.favorite), onPressed: () {  },), // Heart icon as trailing widget
             onTap: () {
               // Add functionality for when a song tile is tapped

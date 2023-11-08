@@ -14,6 +14,8 @@ import '../modules/library/bindings/library_binding.dart';
 import '../modules/library/views/library_view.dart';
 import '../modules/musicplaying/bindings/musicplaying_binding.dart';
 import '../modules/musicplaying/views/musicplaying_view.dart';
+import '../modules/permission/bindings/permission_binding.dart';
+import '../modules/permission/views/permission_view.dart';
 import '../modules/playlists/bindings/playlists_binding.dart';
 import '../modules/playlists/views/playlists_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -27,7 +29,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.PERMISSION;
 
   static final routes = [
     GetPage(
@@ -82,8 +84,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DOWNLOAD,
-      page: () =>  DownloadView(),
+      page: () => DownloadView(),
       binding: DownloadBinding(),
+    ),
+    GetPage(
+      name: _Paths.PERMISSION,
+      page: () => const PermissionView(),
+      binding: PermissionBinding(),
     ),
   ];
 }
