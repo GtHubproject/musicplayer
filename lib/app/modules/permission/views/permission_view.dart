@@ -8,8 +8,6 @@ import 'package:permission_handler/permission_handler.dart';
 
 
 import '../controllers/permission_controller.dart';
-
-
 class PermissionView extends GetView<PermissionController> {
 
   const PermissionView({Key? key}) : super(key: key);

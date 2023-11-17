@@ -8,5 +8,9 @@ class SearchbarBinding extends Bindings {
     Get.lazyPut<SearchbarController>(
       () => SearchbarController(),
     );
+
+    Get.lazyPut<SearchbarController>(
+      () => SearchbarController(),
+    );
   }
 }

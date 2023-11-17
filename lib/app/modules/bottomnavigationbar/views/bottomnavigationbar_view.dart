@@ -18,8 +18,8 @@ class BottomnavigationbarView extends GetView<BottomnavigationbarController> {
   BottomnavigationbarView({Key? key}) : super(key: key);
 
   final screens = [
-    const HomeView(),
-    const SearchbarView(),
+     HomeView(),
+     SearchbarView(),
     const LibraryView(),
      FavouritesView(),
     //const ProfileView(),

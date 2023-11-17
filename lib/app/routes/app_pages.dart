@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:musicplayer/app/modules/playlists/views/playlistDetails.dart';
+import 'package:musicplayer/app/modules/playlists/views/playlist_selection_screen_view.dart';
 
 import '../modules/bottomnavigationbar/bindings/bottomnavigationbar_binding.dart';
 import '../modules/bottomnavigationbar/views/bottomnavigationbar_view.dart';
@@ -17,7 +19,7 @@ import '../modules/musicplaying/views/musicplaying_view.dart';
 import '../modules/permission/bindings/permission_binding.dart';
 import '../modules/permission/views/permission_view.dart';
 import '../modules/playlists/bindings/playlists_binding.dart';
-import '../modules/playlists/views/playlists_view.dart';
+
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/searchbar/bindings/searchbar_binding.dart';
@@ -34,7 +36,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => const HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -62,9 +64,15 @@ class AppPages {
       page: () => PlaylistsView(),
       binding: PlaylistsBinding(),
     ),
+
+    GetPage(
+      name: _Paths.SELECTPLAYLIST,
+      page: () => PlaylistSelectionView(),
+      //binding: PlaylistsBinding(),
+    ),
     GetPage(
       name: _Paths.SEARCHBAR,
-      page: () => const SearchbarView(),
+      page: () => SearchbarView(),
       binding: SearchbarBinding(),
     ),
     GetPage(

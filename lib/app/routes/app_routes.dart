@@ -15,6 +15,8 @@ abstract class Routes {
   static const MUSICPLAYING = _Paths.MUSICPLAYING;
   static const DOWNLOAD = _Paths.DOWNLOAD;
   static const PERMISSION = _Paths.PERMISSION;
+  static const SELECTPLAYLIST = _Paths.SELECTPLAYLIST;
+
 }
 
 abstract class _Paths {
@@ -24,11 +26,13 @@ abstract class _Paths {
   static const LIBRARY = '/library';
   static const FOLDER = '/folder';
   static const FAVOURITES = '/favourites';
-  static const PLAYLISTS = '/playlists';
+  static const PLAYLISTS = '/playlistsdetail';
   static const SEARCHBAR = '/searchbar';
   static const PROFILE = '/profile';
   static const BOTTOMNAVIGATIONBAR = '/bottomnavigationbar';
   static const MUSICPLAYING = '/musicplaying';
   static const DOWNLOAD = '/download';
   static const PERMISSION = '/permission';
+   static const SELECTPLAYLIST = '/selectplaylist';
+
 }
