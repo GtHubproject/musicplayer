@@ -1,7 +1,7 @@
 class SongModel {
   final String title;
   final String artist;
-  final String data; // Assuming data is the path to the song
+  final String data; // Assuming data is the path to the song`
 
   SongModel({required this.title, required this.artist, required this.data});
 
